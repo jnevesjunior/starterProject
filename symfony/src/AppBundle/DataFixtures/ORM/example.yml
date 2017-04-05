@@ -1,0 +1,5 @@
+AppBundle\Entity\Example:
+    example{1..10}:
+        name: <name()>
+        updated_at: <datetimeBetween('now', 'now')>
+        created_at: <datetimeBetween('now', 'now')>
