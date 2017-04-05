@@ -2,12 +2,10 @@
 
 namespace SampleBundle\BaseBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use FOS\RestBundle\Controller\FOSRestController;
 
-class DefaultController extends Controller
-{
-    public function indexAction()
-    {
-        return ['Hello World!'];
+class DefaultController extends FOSRestController {
+    public function indexAction() {
+        return 'Hello World!';
     }
 }
