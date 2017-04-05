@@ -32,7 +32,8 @@
         "jms/serializer-bundle": "^1.1",
         "stof/doctrine-extensions-bundle": "^1.2",
         "nelmio/cors-bundle": "^1.5",
-        "zendframework/zend-hydrator": "^2.2"
+        "zendframework/zend-hydrator": "^2.2",
+        "doctrine/doctrine-migrations-bundle": "^1.2"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
@@ -52,7 +53,13 @@
         ],
         "post-update-cmd": [
             "@symfony-scripts"
-        ]
+        ],
+        "create-db": "php bin/console doctrine:database:create",
+        "drop-db": "php bin/console doctrine:database:drop --force",
+        "reload-entities": "php bin/console doctrine:generate:entities AppBundle",
+        "show-routes": "php bin/console debug:router",
+        "clear-local-cache": "php bin/console cache:clear --env=local",
+        "run-migrations": "php bin/console doctrine:migrations:diff && php bin/console doctrine:migrations:migrate"
     },
     "extra": {
         "symfony-app-dir": "app",

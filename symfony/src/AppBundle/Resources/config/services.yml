@@ -1,0 +1,4 @@
+services:
+    app.services.example:
+            class: AppBundle\Service\ExampleService
+            autowire: true
