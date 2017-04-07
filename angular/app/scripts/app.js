@@ -33,6 +33,11 @@ angular
                         controller  : 'AboutCtrl',
                         controllerAs: 'about'
                     })
+                    .when('/home', {
+                      templateUrl: 'views/home.html',
+                      controller: 'HomeCtrl',
+                      controllerAs: 'home'
+                    })
                     .otherwise({
                                    redirectTo: '/'
                                });
@@ -40,9 +45,17 @@ angular
     .config(function ($mdThemingProvider)
             {
                 $mdThemingProvider.theme('default')
-                    .primaryPalette('blue', {
-                        'default': '900'
-                    });
-                $mdThemingProvider.theme('green')
                     .primaryPalette('green');
+                $mdThemingProvider.theme('jnj')
+                    .primaryPalette('red', {
+                        'default': 'A700'
+                    });
+                $mdThemingProvider.theme('positive')
+                    .primaryPalette('blue', {
+                        'default': 'A700'
+                    });
+                $mdThemingProvider.theme('negative')
+                    .primaryPalette('red', {
+                        'default': 'A700'
+                    });
             });
