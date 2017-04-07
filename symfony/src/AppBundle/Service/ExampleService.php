@@ -17,6 +17,6 @@ class ExampleService extends AbstractService {
     }
 
     public function example(){
-        return 'oi';
+        return true;
     }
 }
