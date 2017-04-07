@@ -47,7 +47,8 @@
 
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+                <md-button class="md-icon-button" aria-label="Settings"
+                           ng-disabled="true">
                     <md-icon class="material-icons md-primary">
                         date_range
                     </md-icon>
@@ -65,27 +66,41 @@
         </md-toolbar>
 
         <div layout="row" layout-align="center center">
-            <p>
-                The left sidenav will 'lock open' on a medium (=960px wide)
-                device.
-            </p>
-            <p>
-                The right sidenav will focus on a specific child element.
-            </p>
-
-            <div>
-                <md-button ng-click="toggleLeft()" class="md-primary"
-                           hide-gt-md="">
-                    Toggle left
-                </md-button>
-            </div>
-
-            <div>
-                <md-button ng-click="toggleRight()" ng-hide="isOpenRight()"
-                           class="md-primary">
-                    Toggle right
-                </md-button>
-            </div>
+            <md-table-container>
+                <table md-table md-row-select multiple ng-model="selected">
+                    <thead md-head md-order="age"
+                           md-on-reorder="getDesserts">
+                    <tr md-row>
+                        <th md-column md-numeric>Age</th>
+                        <th md-column>Balance</th>
+                        <th md-column>Picture</th>
+                        <th md-column>Active</th>
+                        <th md-column md-numeric>Order</th>
+                        <th md-column>Code</th>
+                    </tr>
+                    </thead>
+                    <tbody md-body>
+                    <tr md-row md-select="dessert"
+                        md-auto-select ng-repeat="dessert in tableItens.data | orderBy: query.order | limitTo: query.limit: (query.page - 1) * query.limit ">
+                        <td md-cell>{{dessert.age}}</td>
+                        <td md-cell>{{dessert.balance}}</td>
+                        <td md-cell>{{dessert.picture}}</td>
+                        <td md-cell>{{dessert.isActive}}</td>
+                        <td md-cell>{{dessert.index}}</td>
+                        <td md-cell>{{dessert.guid}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+        </div>
+        <div layout="row" layout-align="center center">
+            <md-table-pagination md-limit="5"
+                                 md-limit-options="[5, 10, 15]"
+                                 md-page="query.page"
+                                 md-total="{{tableItens.data.length}}"
+                                 md-on-paginate="getDesserts"
+                                 md-page-select>
+            </md-table-pagination>
         </div>
 
         <div flex=""></div>
