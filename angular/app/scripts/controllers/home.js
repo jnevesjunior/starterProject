@@ -17,17 +17,22 @@ angular.module('angularApp')
         ];
 
         $scope.selected = [];
+        $scope.filter   = {};
 
         $scope.query = {
             order: 'age',
             filter: '',
-            limit: 8,
+            limit: 5,
             page: 1
         };
 
         $scope.getDesserts = function (order) {
             $scope.promise = {};
             $scope.query.order = order;
+        };
+
+        $scope.showFilter = function () {
+            $scope.filter.show = true;
         };
 
         $scope.removeFilter = function () {
