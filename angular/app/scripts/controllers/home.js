@@ -17,27 +17,30 @@ angular.module('angularApp')
         ];
 
         $scope.selected = [];
-        $scope.filter   = {};
+        $scope.filter = {};
 
         $scope.query = {
-            order: 'age',
+            order : 'age',
             filter: '',
-            limit: 5,
-            page: 1
+            limit : 5,
+            page  : 1
         };
 
-        $scope.getDesserts = function (order) {
+        $scope.getDesserts = function (order)
+        {
             $scope.promise = {};
             $scope.query.order = order;
         };
 
-        $scope.showFilter = function () {
+        $scope.showFilter = function ()
+        {
             $scope.filter.show = true;
         };
 
-        $scope.removeFilter = function () {
+        $scope.removeFilter = function ()
+        {
             $scope.query.filter = '';
-            $scope.filter.show  = false;
+            $scope.filter.show = false;
         };
 
         function pegar()
@@ -48,9 +51,6 @@ angular.module('angularApp')
                   }).then(function (success)
                           {
                               $scope.tableItens = success;
-                          }, function (error)
-                          {
-
                           });
         }
 

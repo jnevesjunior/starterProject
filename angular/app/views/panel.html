@@ -1,0 +1,72 @@
+<section layout="row" layout-fill>
+
+    <md-sidenav
+            class="md-sidenav-left"
+            md-component-id="left"
+            md-is-locked-open="true"
+            md-whiteframe="4"
+            flex="20">
+
+        <md-toolbar>
+            <h1 class="md-toolbar-tools">System Name</h1>
+        </md-toolbar>
+        <md-content layout-padding="center center" flex>
+            <md-list ng-cloak>
+                <md-subheader class="md-no-sticky">
+                    Describe Itens
+                </md-subheader>
+                <md-list-item ng-click="teste()">
+                    <md-icon class="material-icons md-primary">
+                        people
+                    </md-icon>
+                    <p>User</p>
+                </md-list-item>
+                <md-list-item ng-click="teste()">
+                    <md-icon class="material-icons md-primary">
+                        insert_drive_file
+                    </md-icon>
+                    <p>Upload File</p>
+                </md-list-item>
+                <md-list-item ng-click="teste()">
+                    <md-icon class="material-icons md-primary">
+                        av_timer
+                    </md-icon>
+                    <p>History File</p>
+                </md-list-item>
+                <md-list-item ng-click="teste()">
+                    <md-icon class="material-icons md-primary">
+                        date_range
+                    </md-icon>
+                    <p>Calendar</p>
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </md-sidenav>
+
+    <md-content flex>
+
+        <md-toolbar class="md-hue-2">
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="Settings"
+                           ng-disabled="true">
+                    <md-icon class="material-icons md-primary">
+                        date_range
+                    </md-icon>
+                </md-button>
+
+                <h2 flex md-truncate>Page name</h2>
+
+                <a class="md-icon-button" aria-label="More">
+                    <md-icon class="material-icons md-primary">
+                        account_circle
+                    </md-icon>
+                    User Name
+                </a>
+            </div>
+        </md-toolbar>
+
+        <ui-view></ui-view>
+
+    </md-content>
+
+</section>

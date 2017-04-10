@@ -15,33 +15,36 @@ angular
         'ngCookies',
         'ngMessages',
         'ngResource',
-        'ngRoute',
+        'ui.router',
         'ngSanitize',
         'ngTouch',
         'ngMaterial',
         'md.data.table'
     ])
-    .config(function ($routeProvider)
+    .config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             {
-                $routeProvider
-                    .when('/', {
+                $stateProvider
+                    .state('login', {
+                        url         : '/',
                         templateUrl : 'views/main.html',
                         controller  : 'MainCtrl',
                         controllerAs: 'main'
                     })
-                    .when('/about', {
-                        templateUrl : 'views/about.html',
-                        controller  : 'AboutCtrl',
-                        controllerAs: 'about'
+                    .state('panel', {
+                        url         : '/panel',
+                        templateUrl : 'views/panel.html',
+                        controller  : 'PanelCtrl',
+                        controllerAs: 'panel'
                     })
-                    .when('/home', {
-                      templateUrl: 'views/home.html',
-                      controller: 'HomeCtrl',
-                      controllerAs: 'home'
-                    })
-                    .otherwise({
-                                   redirectTo: '/'
-                               });
+                    .state('panel.home', {
+                        url         : '/home',
+                        templateUrl : 'views/home.html',
+                        controller  : 'HomeCtrl',
+                        controllerAs: 'home'
+                    });
+
+                $urlRouterProvider.otherwise('/');
+                $locationProvider.html5Mode(true);
             })
     .config(function ($mdThemingProvider)
             {
