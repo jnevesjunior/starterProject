@@ -55,15 +55,19 @@ angular
     .config(function ($mdThemingProvider)
             {
                 $mdThemingProvider.theme('default')
-                    .primaryPalette('green');
+                    .primaryPalette('red', {
+                        'default': 'A700'
+                    });
                 $mdThemingProvider.theme('jnj')
                     .primaryPalette('red', {
                         'default': 'A700'
                     });
-                $mdThemingProvider.theme('positive')
+                $mdThemingProvider.theme('link')
                     .primaryPalette('blue', {
                         'default': 'A700'
                     });
+                $mdThemingProvider.theme('positive')
+                    .primaryPalette('green');
                 $mdThemingProvider.theme('warn')
                     .primaryPalette('yellow', {
                         'default': 'A700'

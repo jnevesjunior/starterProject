@@ -2,7 +2,7 @@
             ng-hide="filter.show"
             aria-hidden="false">
     <div class="md-toolbar-tools">
-        <h2 class="md-title">Nutrition</h2>
+        <h2 class="md-title">History</h2>
         <div flex="" class="flex"></div>
         <md-button class="md-icon-button" ng-click="showFilter()"
                    aria-label="filter_list">
@@ -56,23 +56,23 @@
             <td md-cell>{{tableFile.picture}}</td>
             <td md-cell>{{tableFile.isActive}}</td>
         </tr>
-        <tr md-row ng-show="showView(tableFile, $index)" flex="">
+        <tr md-row ng-show="showView(tableFile)" flex>
             <td md-cell colspan="5">
                 <md-grid-list md-cols="3"  md-row-height="6:3" md-gutter="10px" class="grid-view">
                     <md-grid-tile>
-                        <md-icon class="material-icons md-primary history-icon" md-theme="positive">cloud_upload</md-icon>
+                        <md-icon class="material-icons md-primary history-icon" md-theme="positive">check_circle</md-icon>
                         <md-grid-tile-footer layout-align="center center">
                             <h3>Upload Complete</h3>
                         </md-grid-tile-footer>
                     </md-grid-tile>
                     <md-grid-tile>
-                        <md-icon class="material-icons md-primary history-icon" md-theme="warn">cloud</md-icon>
+                        <md-icon class="material-icons md-primary history-icon" md-theme="warn">swap_vertical_circle</md-icon>
                         <md-grid-tile-footer layout-align="center center">
                             <h3>In validation...</h3>
                         </md-grid-tile-footer>
                     </md-grid-tile>
                     <md-grid-tile>
-                        <md-icon class="material-icons md-primary history-icon" md-theme="negative">cloud_off</md-icon>
+                        <md-icon class="material-icons md-primary history-icon" md-theme="negative">error</md-icon>
                         <md-grid-tile-footer layout-align="center center">
                             <h3>Job Denied</h3>
                         </md-grid-tile-footer>

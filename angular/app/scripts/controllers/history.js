@@ -31,7 +31,7 @@ angular.module('angularApp')
             $scope.query = {
                 order : 'age',
                 filter: '',
-                limit : 3,
+                limit : 5,
                 page  : 1
             };
         };
@@ -65,9 +65,9 @@ angular.module('angularApp')
             }
         };
 
-        $scope.showView = function (tableFile, $index)
+        $scope.showView = function (tableFile)
         {
-            return ($index === 0 || tableFile.expanded);
+            return tableFile.expanded;
         };
 
         _init();
