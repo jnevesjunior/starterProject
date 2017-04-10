@@ -64,6 +64,10 @@ angular
                     .primaryPalette('blue', {
                         'default': 'A700'
                     });
+                $mdThemingProvider.theme('warn')
+                    .primaryPalette('yellow', {
+                        'default': 'A700'
+                    });
                 $mdThemingProvider.theme('negative')
                     .primaryPalette('red', {
                         'default': 'A700'

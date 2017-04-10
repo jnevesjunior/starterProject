@@ -2,8 +2,21 @@
   margin-top: 2%;
 }
 
-.login-icon{
-  font-size: 110px;
-  height: 110px;
-  width: 110px;
+.login-icon {
+  $login-size: 110px;
+  font-size: $login-size;
+  height: $login-size;
+  width: $login-size;
+}
+
+.history-icon {
+  $history-size: 90px;
+  font-size: $history-size;
+  height: $history-size;
+  width: $history-size;
+}
+
+.grid-view md-grid-tile md-grid-tile-footer {
+  background: rgba(0, 0, 0, 0.68);
+  height: 36px;
 }
