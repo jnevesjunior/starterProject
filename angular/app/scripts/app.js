@@ -26,9 +26,9 @@ angular
                 $stateProvider
                     .state('login', {
                         url         : '/',
-                        templateUrl : 'views/main.html',
-                        controller  : 'MainCtrl',
-                        controllerAs: 'main'
+                        templateUrl : 'views/login.html',
+                        controller  : 'LoginCtrl',
+                        controllerAs: 'login'
                     })
                     .state('panel', {
                         url         : '/panel',
@@ -41,6 +41,12 @@ angular
                         templateUrl : 'views/home.html',
                         controller  : 'HomeCtrl',
                         controllerAs: 'home'
+                    })
+                    .state('panel.history', {
+                        url         : '/history',
+                        templateUrl : 'views/history.html',
+                        controller  : 'HistoryCtrl',
+                        controllerAs: 'history'
                     });
 
                 $urlRouterProvider.otherwise('/');
