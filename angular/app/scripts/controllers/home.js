@@ -20,26 +20,20 @@ angular.module('angularApp')
 
         $scope.query = {
             order: 'age',
-            limit: 10,
+            filter: '',
+            limit: 8,
             page: 1
         };
 
-        function success(desserts) {
-            $scope.desserts = desserts;
-            console.log(desserts)
-        }
-
         $scope.getDesserts = function (order) {
             $scope.promise = {};
-            // $scope.promise = pegar().$promise;
-            // $scope.promise = $nutrition.desserts.get($scope.query, success).$promise;
-            console.log('Scope Order: ',$scope.query);
-            console.log('Order: ', order);
-            console.log('Order: ', $scope.tableItens.data.length);
+            $scope.query.order = order;
         };
 
-
-
+        $scope.removeFilter = function () {
+            $scope.query.filter = '';
+            $scope.filter.show  = false;
+        };
 
         function pegar()
         {
