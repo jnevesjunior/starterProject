@@ -5,41 +5,83 @@
             md-component-id="left"
             md-is-locked-open="true"
             md-whiteframe="4"
-            flex="20">
+            flex="{{sidenav.flex}}"
+            flex-lg="{{sidenav.flexLg}}"
+            flex-gt-lg="{{sidenav.flexGtLg}}">
 
         <md-toolbar>
-            <h1 class="md-toolbar-tools">Sales portal</h1>
+            <div layout="row" flex>
+                <md-button ng-click="menu()"
+                           layout="row"
+                           layout-align="start center" flex>
+                    <span ng-show="sidenav.open" flex="5"></span>
+                    <md-icon aria-label="people"
+                             class="material-icons">
+                        menu
+                    </md-icon>
+                    <span ng-show="sidenav.open" flex="5"></span>
+                    <span ng-show="sidenav.open" >Sales Portal</span>
+                    <span ng-show="sidenav.open" flex></span>
+                </md-button>
+            </div>
         </md-toolbar>
-        <md-content layout-padding="center center" flex>
-            <md-list ng-cloak>
-                <md-subheader class="md-no-sticky">
-                    Describe Itens
-                </md-subheader>
-                <md-list-item ui-sref="panel.home">
-                    <md-icon class="material-icons md-primary">
+        <md-content>
+            <div layout="row" flex>
+                <md-button ui-sref="panel.home"
+                           layout="row"
+                           layout-align="start center" flex>
+                    <span ng-show="sidenav.open" flex="5"></span>
+                    <md-icon aria-label="people"
+                             class="material-icons md-primary">
                         people
                     </md-icon>
-                    <p>User</p>
-                </md-list-item>
-                <md-list-item ui-sref="panel.home">
-                    <md-icon class="material-icons md-primary">
+                    <span ng-show="sidenav.open" flex="5"></span>
+                    <span ng-show="sidenav.open">User</span>
+                    <span ng-show="sidenav.open" flex></span>
+                </md-button>
+            </div>
+            <div layout="row" flex>
+                <md-button ui-sref="panel.home"
+                           layout="row"
+                           layout-align="start center" flex>
+                    <span ng-show="sidenav.open" flex="5"></span>
+                    <md-icon aria-label="people"
+                             class="material-icons md-primary">
                         insert_drive_file
                     </md-icon>
-                    <p>Upload File</p>
-                </md-list-item>
-                <md-list-item ui-sref="panel.history">
-                    <md-icon class="material-icons md-primary">
+                    <span ng-show="sidenav.open" flex="5"></span>
+                    <span ng-show="sidenav.open">Upload File</span>
+                    <span ng-show="sidenav.open" flex></span>
+                </md-button>
+            </div>
+            <div layout="row" flex>
+                <md-button ui-sref="panel.history"
+                           layout="row"
+                           layout-align="start center" flex>
+                    <span ng-show="sidenav.open" flex="5"></span>
+                    <md-icon aria-label="people"
+                             class="material-icons md-primary">
                         av_timer
                     </md-icon>
-                    <p>History File</p>
-                </md-list-item>
-                <md-list-item ui-sref="panel.home">
-                    <md-icon class="material-icons md-primary">
+                    <span ng-show="sidenav.open" flex="5"></span>
+                    <span ng-show="sidenav.open">History File</span>
+                    <span ng-show="sidenav.open" flex></span>
+                </md-button>
+            </div>
+            <div layout="row" ui-sref="panel.home" flex>
+                <md-button ui-sref="panel.home"
+                           layout="row"
+                           layout-align="start center" flex>
+                    <span ng-show="sidenav.open" flex="5"></span>
+                    <md-icon aria-label="people"
+                             class="material-icons md-primary">
                         date_range
                     </md-icon>
-                    <p>Calendar</p>
-                </md-list-item>
-            </md-list>
+                    <span ng-show="sidenav.open" flex="5"></span>
+                    <span ng-show="sidenav.open">Calendar</span>
+                    <span ng-show="sidenav.open" flex></span>
+                </md-button>
+            </div>
         </md-content>
     </md-sidenav>
 
