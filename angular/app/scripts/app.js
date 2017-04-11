@@ -47,8 +47,13 @@ angular
                         templateUrl : 'views/history.html',
                         controller  : 'HistoryCtrl',
                         controllerAs: 'history'
+                    })
+                    .state('panel.upload', {
+                        url         : '/upload',
+                        templateUrl : 'views/upload.html',
+                        controller  : 'UploadCtrl',
+                        controllerAs: 'upload'
                     });
-
                 $urlRouterProvider.otherwise('/');
                 $locationProvider.html5Mode(true);
             })
