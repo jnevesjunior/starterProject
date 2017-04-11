@@ -8,10 +8,18 @@
  * Controller of the angularApp
  */
 angular.module('angularApp')
-  .controller('UploadCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+    .controller('UploadCtrl', function ($scope, FileUploader)
+    {
+        this.awesomeThings = [
+            'HTML5 Boilerplate',
+            'AngularJS',
+            'Karma'
+        ];
+        $scope.uploader = new FileUploader();
+
+        $scope.teste = function (teste)
+        {
+            console.log(teste.queue.length);
+            return teste.queue.length > 0;
+        }
+    });

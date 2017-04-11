@@ -1,11 +1,33 @@
-<form ng-model="tests">
-    <input ng-hide="true" ng-model="myfiles" id="input-file-id" multiple type="file" />
-    <label for="input-file-id" class="md-button md-raised md-primary">Choose Files</label>
-</form>
+<div layout="column" layout-align="center center">
+    <div layout="row" flex>
+        <input type="file" id="fileInput" class="ng-hide" nv-file-select uploader="uploader" multiple/>
+        <label for="fileInput" class="md-button md-raised md-primary md-positive-theme">Choose Files</label>
+    </div>
 
-<br>
-<br>
-<br>
-{{myfiles}}
-{{input-file-id}}
-{{tests}}
+    <div layout="row" flex>
+        <table md-table ng-show="teste(uploader)">
+            <thead md-head>
+            <tr md-row>
+                <th md-column>File Name</th>
+                <th md-column>Type</th>
+                <th md-column>Size</th>
+                <th md-column>Remove</th>
+            </tr>
+            </thead>
+            <tbody md-body ng-repeat="item in uploader.queue">
+            <tr md-row>
+                <td md-cell>{{item.file.name}}</td>
+                <td md-cell>{{item.file.type}}</td>
+                <td md-cell>{{item.file.size}}</td>
+                <td md-cell>
+                    <md-button class="md-fab md-mini md-primary"
+                               aria-label="show more"
+                               ng-click="item.remove()">
+                        <md-icon class="material-icons">remove</md-icon>
+                    </md-button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -19,7 +19,8 @@ angular
         'ngSanitize',
         'ngTouch',
         'ngMaterial',
-        'md.data.table'
+        'md.data.table',
+        'angularFileUpload'
     ])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             {
