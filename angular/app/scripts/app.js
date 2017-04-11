@@ -32,6 +32,12 @@ angular
                         controller  : 'LoginCtrl',
                         controllerAs: 'login'
                     })
+                    .state('create', {
+                        url         : '/create',
+                        templateUrl : 'views/create.html',
+                        controller  : 'CreateCtrl',
+                        controllerAs: 'create'
+                    })
                     .state('panel', {
                         url         : '/panel',
                         templateUrl : 'views/panel.html',
