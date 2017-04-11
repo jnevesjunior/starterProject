@@ -20,7 +20,8 @@ angular
         'ngTouch',
         'ngMaterial',
         'md.data.table',
-        'angularFileUpload'
+        'angularFileUpload',
+        'materialCalendar'
     ])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             {
@@ -87,5 +88,9 @@ angular
                 $mdThemingProvider.theme('negative')
                     .primaryPalette('red', {
                         'default': 'A700'
+                    });
+                $mdThemingProvider.theme('background')
+                    .primaryPalette('grey', {
+                        'default': '50'
                     });
             });
