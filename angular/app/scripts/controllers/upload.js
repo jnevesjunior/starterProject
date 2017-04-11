@@ -16,10 +16,4 @@ angular.module('angularApp')
             'Karma'
         ];
         $scope.uploader = new FileUploader();
-
-        $scope.teste = function (teste)
-        {
-            console.log(teste.queue.length);
-            return teste.queue.length > 0;
-        }
     });

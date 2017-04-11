@@ -1,11 +1,14 @@
 <div layout="column" layout-align="center center">
     <div layout="row" flex>
-        <input type="file" id="fileInput" class="ng-hide" nv-file-select uploader="uploader" multiple/>
-        <label for="fileInput" class="md-button md-raised md-primary md-positive-theme">Choose Files</label>
+        <input type="file" id="fileInput" class="ng-hide" nv-file-select
+               uploader="uploader" multiple/>
+        <label for="fileInput"
+               class="md-button md-raised md-primary md-positive-theme">Choose
+                                                                        Files</label>
     </div>
 
     <div layout="row" flex>
-        <table md-table ng-show="teste(uploader)">
+        <table md-table>
             <thead md-head>
             <tr md-row>
                 <th md-column>File Name</th>
@@ -29,5 +32,12 @@
             </tr>
             </tbody>
         </table>
+    </div>
+
+    <div layout="row" flex>
+        <md-progress-linear class="md-primary" md-mode="determinate"
+                            value="10"></md-progress-linear>
+        <md-progress-linear class="md-warn" md-mode="indeterminate"
+                            ng-disabled="false"></md-progress-linear>
     </div>
 </div>
