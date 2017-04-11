@@ -54,6 +54,12 @@ angular
                         templateUrl : 'views/upload.html',
                         controller  : 'UploadCtrl',
                         controllerAs: 'upload'
+                    })
+                    .state('panel.calendar', {
+                        url         : '/calendar',
+                        templateUrl : 'views/calendar.html',
+                        controller  : 'CalendarCtrl',
+                        controllerAs: 'calendar'
                     });
                 $urlRouterProvider.otherwise('/');
                 $locationProvider.html5Mode(true);
