@@ -19,69 +19,60 @@
                              class="material-icons">
                         menu
                     </md-icon>
-                    <span ng-show="sidenav.open" flex="5"></span>
-                    <span ng-show="sidenav.open" >Sales Portal</span>
-                    <span ng-show="sidenav.open" flex></span>
+                    <span class="panel-menu-label" ng-show="sidenav.open"
+                          flex-offset="5" flex>
+                        Sales Portal
+                    </span>
                 </md-button>
             </div>
         </md-toolbar>
-        <md-content>
-            <div layout="row" flex>
-                <md-button ui-sref="panel.home"
-                           layout="row"
-                           layout-align="start center" flex>
-                    <span ng-show="sidenav.open" flex="5"></span>
-                    <md-icon aria-label="people"
-                             class="material-icons md-primary">
-                        people
-                    </md-icon>
-                    <span ng-show="sidenav.open" flex="5"></span>
-                    <span ng-show="sidenav.open">User</span>
-                    <span ng-show="sidenav.open" flex></span>
-                </md-button>
-            </div>
-            <div layout="row" flex>
-                <md-button ui-sref="panel.home"
-                           layout="row"
-                           layout-align="start center" flex>
-                    <span ng-show="sidenav.open" flex="5"></span>
-                    <md-icon aria-label="people"
-                             class="material-icons md-primary">
-                        insert_drive_file
-                    </md-icon>
-                    <span ng-show="sidenav.open" flex="5"></span>
-                    <span ng-show="sidenav.open">Upload File</span>
-                    <span ng-show="sidenav.open" flex></span>
-                </md-button>
-            </div>
-            <div layout="row" flex>
-                <md-button ui-sref="panel.history"
-                           layout="row"
-                           layout-align="start center" flex>
-                    <span ng-show="sidenav.open" flex="5"></span>
-                    <md-icon aria-label="people"
-                             class="material-icons md-primary">
-                        av_timer
-                    </md-icon>
-                    <span ng-show="sidenav.open" flex="5"></span>
-                    <span ng-show="sidenav.open">History File</span>
-                    <span ng-show="sidenav.open" flex></span>
-                </md-button>
-            </div>
-            <div layout="row" ui-sref="panel.home" flex>
-                <md-button ui-sref="panel.home"
-                           layout="row"
-                           layout-align="start center" flex>
-                    <span ng-show="sidenav.open" flex="5"></span>
-                    <md-icon aria-label="people"
-                             class="material-icons md-primary">
-                        date_range
-                    </md-icon>
-                    <span ng-show="sidenav.open" flex="5"></span>
-                    <span ng-show="sidenav.open">Calendar</span>
-                    <span ng-show="sidenav.open" flex></span>
-                </md-button>
-            </div>
+        <md-content layout="column">
+            <md-list>
+                <md-list-item ui-sref="panel.home" class="iten-list">
+                    <div class="md-avatar">
+                        <md-icon aria-label="people"
+                                 class="material-icons md-primary">
+                            people
+                        </md-icon>
+                    </div>
+                    <div class="md-list-item-text" ng-show="sidenav.open">
+                        <p>Users</p>
+                    </div>
+                </md-list-item>
+                <md-list-item ui-sref="panel.home" class="iten-list">
+                    <div class="md-avatar">
+                        <md-icon aria-label="people"
+                                 class="material-icons md-primary">
+                            insert_drive_file
+                        </md-icon>
+                    </div>
+                    <div class="md-list-item-text" ng-show="sidenav.open">
+                        <p>Upload File</p>
+                    </div>
+                </md-list-item>
+                <md-list-item ui-sref="panel.history" class="iten-list">
+                    <div class="md-avatar">
+                        <md-icon aria-label="people"
+                                 class="material-icons md-primary">
+                            av_timer
+                        </md-icon>
+                    </div>
+                    <div class="md-list-item-text" ng-show="sidenav.open">
+                        <p>History</p>
+                    </div>
+                </md-list-item>
+                <md-list-item ui-sref="panel.home" class="iten-list">
+                    <div class="md-avatar">
+                        <md-icon aria-label="people"
+                                 class="material-icons md-primary">
+                            date_range
+                        </md-icon>
+                    </div>
+                    <div class="md-list-item-text" ng-show="sidenav.open">
+                        <p>Calendar</p>
+                    </div>
+                </md-list-item>
+            </md-list>
         </md-content>
     </md-sidenav>
 

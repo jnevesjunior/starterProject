@@ -16,6 +16,13 @@ angular.module('angularApp')
             'Karma'
         ];
 
+        $scope.sidenav = {
+            open: true,
+            flex: 5,
+            flexLg: 15,
+            flexGtLg: 10
+        };
+
         $scope.$watch(function ()
                       {
                           return $mdMedia('gt-md');
@@ -23,13 +30,6 @@ angular.module('angularApp')
                       {
                           $scope.sidenav.open = show;
                       });
-
-        $scope.sidenav = {
-            open: true,
-            flex: 5,
-            flexLg: 15,
-            flexGtLg: 10
-        };
 
         $scope.menu = function ()
         {
@@ -47,6 +47,5 @@ angular.module('angularApp')
                 $scope.sidenav.flexLg = 15;
                 $scope.sidenav.flexGtLg = 10;
             }
-            console.log($scope.sidenav);
-        }
+        };
     });
