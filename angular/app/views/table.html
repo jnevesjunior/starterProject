@@ -1,0 +1,66 @@
+<md-toolbar class="md-table-toolbar md-default"
+            ng-hide="selected.length || filter.show"
+            aria-hidden="false">
+    <div class="md-toolbar-tools">
+        <h2 class="md-title">Nutrition</h2>
+        <div flex="" class="flex"></div>
+        <md-button class="md-icon-button" ng-click="showFilter()"
+                   aria-label="filter_list">
+            <md-icon class="material-icons">search</md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+<md-toolbar class="md-table-toolbar md-default ng-hide"
+            ng-show="filter.show && !selected.length"
+            aria-hidden="true">
+    <div class="md-toolbar-tools">
+
+        <md-icon class="material-icons">search</md-icon>
+        <md-input-container flex="95">
+            <input ng-model="query.filter"
+                   ng-model-options="filter.options"
+                   placeholder="search"
+                   aria-invalid="false" flex="95">
+
+        </md-input-container>
+        <md-button class="md-icon-button" ng-click="removeFilter()"
+                   aria-label="close">
+            <md-icon class="material-icons">close</md-icon>
+        </md-button>
+
+    </div>
+</md-toolbar>
+<md-table-container>
+    <table md-table md-row-select multiple ng-model="selected">
+        <thead md-head md-order="age"
+               md-on-reorder="getDesserts">
+        <tr md-row>
+            <th md-column md-order-by="age" data-md-numeric>Age</th>
+            <th md-column md-order-by="balance">Balance</th>
+            <th md-column md-order-by="picture">Picture</th>
+            <th md-column md-order-by="isActive">Active</th>
+            <th md-column md-order-by="index" md-numeric>Order</th>
+            <th md-column md-order-by="guid">Code</th>
+        </tr>
+        </thead>
+        <tbody md-body>
+        <tr md-row md-select="dessert"
+            md-auto-select
+            ng-repeat="dessert in tableItens.data | orderBy: query.order | filter: query.filter | limitTo: query.limit: (query.page - 1) * query.limit ">
+            <td md-cell>{{dessert.age}}</td>
+            <td md-cell>{{dessert.balance}}</td>
+            <td md-cell>{{dessert.picture}}</td>
+            <td md-cell>{{dessert.isActive}}</td>
+            <td md-cell>{{dessert.index}}</td>
+            <td md-cell>{{dessert.guid}}</td>
+        </tr>
+        </tbody>
+    </table>
+</md-table-container>
+<md-table-pagination md-limit="query.limit"
+                     md-limit-options="[5, 10, 15]"
+                     md-page="query.page"
+                     md-total="{{tableItens.data.length}}"
+                     md-on-paginate="getDesserts"
+                     md-page-select>
+</md-table-pagination>

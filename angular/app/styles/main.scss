@@ -29,3 +29,17 @@
     margin-right: 7px;
   }
 }
+
+.teste {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+.teste2 {
+  position: relative;
+  z-index: 2;
+}

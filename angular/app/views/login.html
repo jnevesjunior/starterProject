@@ -1,74 +1,45 @@
-<md-content layout="row" layout-fill>
-
-    <div layout="column" layout-align="center center" layout-fill flex>
-        <div layout="row" layout-align="center end" flex>
-            <img src="images/logo.png" flex="50"/>
+<div layout="row" layout-align="center end">
+    <div layout="column" flex="90">
+        <div layout="row">
+            <md-input-container flex>
+                <label>Email</label>
+                <input ng-model="user.email" type="email"
+                       aria-label="Email"/>
+            </md-input-container>
         </div>
-        <div layout="row" layout-align="center start" flex>
-            <span>Welcome to Sales Portal</span>
+        <div layout="row">
+            <md-input-container flex>
+                <label>Password</label>
+                <input ng-model="user.password" type="password"
+                       aria-label="Password"/>
+            </md-input-container>
+        </div>
+        <div layout="row">
+            <md-button class="md-raised md-primary" md-theme="jnj"
+                       aria-label="J&J Account" flex>
+                <md-icon class="material-icons" aria-label="Lock">
+                    lock_outline
+                </md-icon>
+                J&J Account
+            </md-button>
+            <md-button class="md-raised md-primary"
+                       md-theme="positive" aria-label="Login"
+                       ui-sref="panel.upload" flex>
+                <md-icon aria-label="Check" class="material-icons">
+                    check
+                </md-icon>
+                Login
+            </md-button>
         </div>
     </div>
-
-    <md-sidenav
-            class="md-sidenav-left"
-            md-component-id="left"
-            md-is-locked-open="true"
-            md-whiteframe="4"
-            flex="25">
-
-        <md-toolbar>
-            <md-icon aria-label="Account"
-                     class="material-icons md-primary login-icon">
-                account_circle
-            </md-icon>
-        </md-toolbar>
-        <md-content layout="column" layout-align="space-around stretch" flex>
-            <div layout="row" layout-align="center end">
-                <div layout="column" flex="90">
-                    <div layout="row">
-                        <md-input-container flex>
-                            <label>Email</label>
-                            <input ng-model="user.email" type="email"
-                                   aria-label="Email" />
-                        </md-input-container>
-                    </div>
-                    <div layout="row">
-                        <md-input-container flex>
-                            <label>Password</label>
-                            <input ng-model="user.password" type="password"
-                                   aria-label="Password" />
-                        </md-input-container>
-                    </div>
-                    <div layout="row">
-                        <md-button class="md-raised md-primary" md-theme="jnj"
-                                   aria-label="J&J Account" flex>
-                            <md-icon class="material-icons" aria-label="Lock">
-                                lock_outline
-                            </md-icon>
-                            J&J Account
-                        </md-button>
-                        <md-button class="md-raised md-primary"
-                                   md-theme="positive" aria-label="Login"
-                                   ui-sref="panel.upload" flex>
-                            <md-icon aria-label="Check" class="material-icons">
-                                check
-                            </md-icon>
-                            Login
-                        </md-button>
-                    </div>
-                </div>
-            </div>
-            <div layout="row" layout-align="center end">
-                <md-button class="md-primary" md-theme="link"
-                           aria-label="Create Account"
-                           ui-sref="create">
-                    <md-icon class="material-icons" aria-label="Person add">
-                        person_add
-                    </md-icon>
-                    Create Account
-                </md-button>
-            </div>
-        </md-content>
-    </md-sidenav>
-
-</md-content>
+</div>
+<div layout="row" layout-align="center end">
+    <md-button class="md-primary" md-theme="link"
+               aria-label="Create Account"
+               ui-sref="home.create">
+        <md-icon class="material-icons" aria-label="Person add">
+            person_add
+        </md-icon>
+        Create Account
+    </md-button>
+</div>

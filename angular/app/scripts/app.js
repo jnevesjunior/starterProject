@@ -26,13 +26,18 @@ angular
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             {
                 $stateProvider
-                    .state('login', {
+                    .state('home', {
+                        templateUrl : 'views/home.html',
+                        controller  : 'HomeCtrl',
+                        controllerAs: 'home'
+                    })
+                    .state('home.login', {
                         url         : '/',
                         templateUrl : 'views/login.html',
                         controller  : 'LoginCtrl',
                         controllerAs: 'login'
                     })
-                    .state('create', {
+                    .state('home.create', {
                         url         : '/create',
                         templateUrl : 'views/create.html',
                         controller  : 'CreateCtrl',
@@ -44,11 +49,11 @@ angular
                         controller  : 'PanelCtrl',
                         controllerAs: 'panel'
                     })
-                    .state('panel.home', {
-                        url         : '/home',
-                        templateUrl : 'views/home.html',
-                        controller  : 'HomeCtrl',
-                        controllerAs: 'home'
+                    .state('panel.table', {
+                        url         : '/table',
+                        templateUrl : 'views/table.html',
+                        controller  : 'TableCtrl',
+                        controllerAs: 'table'
                     })
                     .state('panel.history', {
                         url         : '/history',
