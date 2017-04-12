@@ -9,7 +9,7 @@
             <md-card-title>
                 <md-card-title-text layout-align="center center">
                     <span class="md-headline">
-                        <md-icon aria-label="J&J Account"
+                        <md-icon aria-label="Account"
                                  class="material-icons md-primary login-icon">
                             account_circle
                         </md-icon>
@@ -20,29 +20,31 @@
                 <div layout="row" layout-align="center center" flex>
                     <md-input-container flex="80">
                         <label>Email</label>
-                        <input ng-model="user.title" type="email">
+                        <input ng-model="user.email" type="email"
+                               aria-label="Email">
                     </md-input-container>
                 </div>
 
                 <div layout="row" layout-align="center center" flex>
                     <md-input-container flex="80">
                         <label>Password</label>
-                        <input ng-model="user.p" type="password">
+                        <input ng-model="user.password" type="password"
+                               aria-label="Password">
                     </md-input-container>
                 </div>
             </md-card-content>
             <md-card-actions layout="row" layout-align="space-between center">
                 <md-button class="md-raised md-primary" md-theme="jnj"
                            aria-label="J&J Account" flex="25">
-                    <md-icon aria-label="Lock" class="material-icons">
+                    <md-icon class="material-icons" aria-label="Lock">
                         lock_outline
                     </md-icon>
                     J&J Account
                 </md-button>
                 <md-button class="md-primary" md-theme="link"
-                           aria-label="Create" flex="30"
+                           aria-label="Create Account" flex="30"
                            ui-sref="create">
-                    <md-icon aria-label="Lock" class="material-icons">
+                    <md-icon class="material-icons" aria-label="Person add">
                         person_add
                     </md-icon>
                     Create Account

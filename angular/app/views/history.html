@@ -1,33 +1,32 @@
 <md-toolbar class="md-table-toolbar md-default"
             ng-hide="filter.show"
-            aria-hidden="false">
+            aria-hidden="false" aria-label="Name Bar">
     <div class="md-toolbar-tools">
         <h2 class="md-title">History</h2>
         <div flex="" class="flex"></div>
         <md-button class="md-icon-button" ng-click="showFilter()"
-                   aria-label="filter_list">
-            <md-icon class="material-icons">search</md-icon>
+                   aria-label="Table Filter">
+            <md-icon class="material-icons" aria-label="Search">search</md-icon>
         </md-button>
     </div>
 </md-toolbar>
 <md-toolbar class="md-table-toolbar md-default ng-hide"
             ng-show="filter.show"
-            aria-hidden="true">
+            aria-hidden="true" aria-label="Search Bar">
     <div class="md-toolbar-tools">
-
-        <md-icon class="material-icons">search</md-icon>
+        <md-icon class="material-icons" aria-label="Search">search</md-icon>
         <md-input-container flex="95">
             <input ng-model="query.filter"
                    ng-model-options="filter.options"
                    placeholder="search"
-                   aria-invalid="false" flex="95">
+                   aria-invalid="false"
+                   aria-label="Search" flex="95">
 
         </md-input-container>
         <md-button class="md-icon-button" ng-click="removeFilter()"
-                   aria-label="close">
-            <md-icon class="material-icons">close</md-icon>
+                   aria-label="Close">
+            <md-icon class="material-icons" aria-label="Close">close</md-icon>
         </md-button>
-
     </div>
 </md-toolbar>
 <md-table-container>
@@ -42,13 +41,16 @@
             <th md-column md-order-by="isActive">Status</th>
         </tr>
         </thead>
-        <tbody md-body ng-repeat="tableFile in tableFiles | orderBy: query.order | filter: query.filter | limitTo: query.limit: (query.page - 1) * query.limit ">
+        <tbody md-body
+               ng-repeat="tableFile in tableFiles | orderBy: query.order | filter: query.filter | limitTo: query.limit: (query.page - 1) * query.limit ">
         <tr md-row>
             <td md-cell>
                 <md-button class="md-fab md-mini md-primary"
-                           aria-label="show more"
+                           aria-label="Show More"
                            ng-click="changeView(tableFile)">
-                    <md-icon class="material-icons">remove_red_eye</md-icon>
+                    <md-icon class="material-icons" aria-label="Show">
+                        remove_red_eye
+                    </md-icon>
                 </md-button>
             </td>
             <td md-cell>{{tableFile.age}}</td>
@@ -58,21 +60,31 @@
         </tr>
         <tr md-row ng-show="showView(tableFile)" flex>
             <td md-cell colspan="5">
-                <md-grid-list md-cols="3"  md-row-height="6:3" md-gutter="10px" class="grid-view">
+                <md-grid-list md-cols="3" md-row-height="6:3" md-gutter="10px"
+                              class="grid-view">
                     <md-grid-tile>
-                        <md-icon class="material-icons md-primary history-icon" md-theme="positive">check_circle</md-icon>
+                        <md-icon class="material-icons md-primary history-icon"
+                                 md-theme="positive" aria-label="Check">
+                            check_circle
+                        </md-icon>
                         <md-grid-tile-footer layout-align="center center">
                             <h3>Upload Complete</h3>
                         </md-grid-tile-footer>
                     </md-grid-tile>
                     <md-grid-tile>
-                        <md-icon class="material-icons md-primary history-icon" md-theme="warn">swap_vertical_circle</md-icon>
+                        <md-icon class="material-icons md-primary history-icon"
+                                 md-theme="warn" aria-label="Swap">
+                            swap_vertical_circle
+                        </md-icon>
                         <md-grid-tile-footer layout-align="center center">
                             <h3>In validation...</h3>
                         </md-grid-tile-footer>
                     </md-grid-tile>
                     <md-grid-tile>
-                        <md-icon class="material-icons md-primary history-icon" md-theme="negative">error</md-icon>
+                        <md-icon class="material-icons md-primary history-icon"
+                                 md-theme="negative" aria-label="Error">
+                            error
+                        </md-icon>
                         <md-grid-tile-footer layout-align="center center">
                             <h3>Job Denied</h3>
                         </md-grid-tile-footer>

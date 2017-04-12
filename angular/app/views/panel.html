@@ -12,11 +12,10 @@
         <md-toolbar>
             <div layout="row" flex>
                 <md-button ng-click="menu()"
-                           layout="row"
-                           layout-align="start center" flex>
+                           layout="row" layout-align="start center"
+                           aria-label="Menu" flex>
                     <span ng-show="sidenav.open" flex="5"></span>
-                    <md-icon aria-label="people"
-                             class="material-icons">
+                    <md-icon class="material-icons" aria-label="Menu">
                         menu
                     </md-icon>
                     <span class="panel-menu-label" ng-show="sidenav.open"
@@ -30,8 +29,8 @@
             <md-list>
                 <md-list-item ui-sref="panel.home" class="iten-list">
                     <div class="md-avatar">
-                        <md-icon aria-label="people"
-                                 class="material-icons md-primary">
+                        <md-icon class="material-icons md-primary"
+                                 aria-label="Users">
                             people
                         </md-icon>
                     </div>
@@ -41,8 +40,8 @@
                 </md-list-item>
                 <md-list-item ui-sref="panel.upload" class="iten-list">
                     <div class="md-avatar">
-                        <md-icon aria-label="people"
-                                 class="material-icons md-primary">
+                        <md-icon class="material-icons md-primary"
+                                 aria-label="Upload">
                             insert_drive_file
                         </md-icon>
                     </div>
@@ -52,8 +51,8 @@
                 </md-list-item>
                 <md-list-item ui-sref="panel.history" class="iten-list">
                     <div class="md-avatar">
-                        <md-icon aria-label="people"
-                                 class="material-icons md-primary">
+                        <md-icon class="material-icons md-primary"
+                                 aria-label="History">
                             av_timer
                         </md-icon>
                     </div>
@@ -63,8 +62,8 @@
                 </md-list-item>
                 <md-list-item ui-sref="panel.calendar" class="iten-list">
                     <div class="md-avatar">
-                        <md-icon aria-label="people"
-                                 class="material-icons md-primary">
+                        <md-icon class="material-icons md-primary"
+                                 aria-label="Calendar">
                             date_range
                         </md-icon>
                     </div>
@@ -80,17 +79,16 @@
 
         <md-toolbar class="md-hue-2">
             <div class="md-toolbar-tools">
-                <md-button class="md-icon-button" aria-label="Settings"
-                           ng-disabled="true">
-                    <md-icon class="material-icons md-primary">
-                        date_range
-                    </md-icon>
-                </md-button>
+                <md-icon class="material-icons md-primary"
+                         aria-label="Calendar">
+                    date_range
+                </md-icon>
 
                 <h2 flex md-truncate>Page name</h2>
 
                 <a class="md-icon-button" aria-label="More">
-                    <md-icon class="material-icons md-primary">
+                    <md-icon class="material-icons md-primary"
+                             aria-label="Account">
                         account_circle
                     </md-icon>
                     User Name

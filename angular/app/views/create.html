@@ -9,7 +9,7 @@
             <md-card-title>
                 <md-card-title-text layout-align="center center">
                     <span class="md-headline">
-                        <md-icon aria-label="J&J Account"
+                        <md-icon aria-label="Account"
                                  class="material-icons md-primary login-icon">
                             account_circle
                         </md-icon>
@@ -20,30 +20,33 @@
                 <div layout="row" layout-align="center center" flex>
                     <md-input-container flex="80">
                         <label>Email</label>
-                        <input ng-model="user.title" type="email">
+                        <input ng-model="user.email" type="email"
+                               aria-label="Email">
                     </md-input-container>
                 </div>
 
                 <div layout="row" layout-align="center center" flex>
                     <md-input-container flex="80">
                         <label>Password</label>
-                        <input ng-model="user.p" type="password">
+                        <input ng-model="user.password" type="password"
+                               aria-label="Password">
                     </md-input-container>
                 </div>
             </md-card-content>
             <md-card-actions layout="row" layout-align="space-between center">
                 <md-button class="md-raised md-primary" md-theme="negative"
-                           aria-label="J&J Account" flex="25"
+                           aria-label="Cancel" flex="25"
                            ui-sref="login">
-                    <md-icon aria-label="Lock" class="material-icons">
+                    <md-icon class="material-icons" aria-label="cancel">
                         cancel
                     </md-icon>
                     Cancel
                 </md-button>
                 <md-button class="md-raised md-primary"
                            md-theme="positive" aria-label="Login"
-                           flex="25">
-                    <md-icon aria-label="Check" class="material-icons">check
+                           aria-label="Create" flex="25">
+                    <md-icon class="material-icons" aria-label="Check">
+                        check
                     </md-icon>
                     Create
                 </md-button>
