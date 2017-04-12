@@ -1,21 +1,19 @@
-<div layout="row" layout-align="center start" layout-fill>
-    <calendar-md id="calendar" flex="90"
-                 md-theme="background"
-                 calendar-direction="direction"
-                 on-prev-month="prevMonth"
-                 on-next-month="nextMonth"
-                 on-day-click="dayClick"
-                 title-format="'MMMM y'"
-                 ng-model='selectedDate'
-                 day-format="dayFormat"
-                 day-label-format="'EEE'"
-                 day-label-tooltip-format="'EEEE'"
-                 day-tooltip-format="'fullDate'"
-                 week-starts-on="weekStartsOn"
-                 start-Date-of-month="1"
-                 no-of-days="30"
-                 tooltips="true"
-                 day-content="setDayContent"
-                 disable-future-selection="disableFutureDates">
-    </calendar-md>
-</div>
+<calendar-md id="calendar" layout-fill
+             md-theme="background"
+             calendar-direction="direction"
+             on-prev-month="prevMonth"
+             on-next-month="nextMonth"
+             on-day-click="dayClick"
+             title-format="'MMMM y'"
+             ng-model='selectedDate'
+             day-format="dayFormat"
+             day-label-format="'EEE'"
+             day-label-tooltip-format="'EEEE'"
+             day-tooltip-format="'fullDate'"
+             week-starts-on="weekStartsOn"
+             start-Date-of-month="1"
+             no-of-days="30"
+             tooltips="true"
+             day-content="setDayContent"
+             disable-future-selection="disableFutureDates">
+</calendar-md>
