@@ -1,56 +1,80 @@
-<md-content layout-align="center center">
+<md-content layout="row" layout-fill>
 
-    <div layout="row" layout-align="center center" class="login-card" flex>
-        <img src="images/logo.png" flex="20">
+    <div layout="column" layout-align="center center" layout-fill flex>
+        <div layout="row" layout-align="center end" flex>
+            <img src="images/logo.png" flex="50"/>
+        </div>
+        <div layout="row" layout-align="center start" flex>
+            <span>Welcome to Sales Portal</span>
+        </div>
     </div>
 
-    <div layout="row" layout-align="center center" class="login-card" flex>
-        <md-card flex="45">
-            <md-card-title>
-                <md-card-title-text layout-align="center center">
-                    <span class="md-headline">
-                        <md-icon aria-label="Account"
-                                 class="material-icons md-primary login-icon">
-                            account_circle
-                        </md-icon>
-                    </span>
-                </md-card-title-text>
-            </md-card-title>
-            <md-card-content>
-                <div layout="row" layout-align="center center" flex>
-                    <md-input-container flex="80">
-                        <label>Email</label>
-                        <input ng-model="user.email" type="email"
-                               aria-label="Email">
-                    </md-input-container>
-                </div>
+    <md-sidenav
+            class="md-sidenav-left"
+            md-component-id="left"
+            md-is-locked-open="true"
+            md-whiteframe="4"
+            flex="25">
 
-                <div layout="row" layout-align="center center" flex>
-                    <md-input-container flex="80">
-                        <label>Password</label>
-                        <input ng-model="user.password" type="password"
-                               aria-label="Password">
-                    </md-input-container>
+        <md-toolbar>
+            <md-icon aria-label="Account"
+                     class="material-icons md-primary login-icon">
+                account_circle
+            </md-icon>
+        </md-toolbar>
+        <md-content layout="column" layout-align="space-around stretch" flex>
+            <div layout="row" layout-align="center end">
+                <div layout="column" flex="90">
+                    <form>
+                    <div layout="row">
+                        <md-input-container flex>
+                            <label>Name</label>
+                            <input ng-model="user.name" aria-label="Name" ng-required=""/>
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container flex>
+                            <label>Email</label>
+                            <input ng-model="user.email" type="email"
+                                   aria-label="Email" />
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container flex>
+                            <label>Password</label>
+                            <input ng-model="user.password" type="password"
+                                   aria-label="Password" />
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container flex>
+                            <label>Confirm Password</label>
+                            <input ng-model="user.password2" type="password"
+                                   aria-label="Confirm Password" />
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-button class="md-raised md-primary" md-theme="negative"
+                                   aria-label="Cancel" flex
+                                   ui-sref="login">
+                            <md-icon class="material-icons" aria-label="cancel">
+                                cancel
+                            </md-icon>
+                            Cancel
+                        </md-button>
+                        <md-button class="md-raised md-primary"
+                                   md-theme="positive" aria-label="Login"
+                                   aria-label="Create" flex>
+                            <md-icon class="material-icons" aria-label="Check">
+                                check
+                            </md-icon>
+                            Create
+                        </md-button>
+                    </div>
+                    </form>
                 </div>
-            </md-card-content>
-            <md-card-actions layout="row" layout-align="space-between center">
-                <md-button class="md-raised md-primary" md-theme="negative"
-                           aria-label="Cancel" flex="25"
-                           ui-sref="login">
-                    <md-icon class="material-icons" aria-label="cancel">
-                        cancel
-                    </md-icon>
-                    Cancel
-                </md-button>
-                <md-button class="md-raised md-primary"
-                           md-theme="positive" aria-label="Login"
-                           aria-label="Create" flex="25">
-                    <md-icon class="material-icons" aria-label="Check">
-                        check
-                    </md-icon>
-                    Create
-                </md-button>
-            </md-card-actions>
-        </md-card>
-    </div>
+            </div>
+        </md-content>
+    </md-sidenav>
+
 </md-content>
