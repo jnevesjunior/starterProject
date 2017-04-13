@@ -16,36 +16,51 @@ angular.module('angularApp')
             'Karma'
         ];
 
-        $scope.sidenav = {
-            open: true,
-            flex: 5,
-            flexLg: 15,
-            flexGtLg: 10
+        const changeSideNav = function (open, flex, fledLg, flexGxLg, mobile)
+        {
+            $scope.sidenav = {
+                open    : open,
+                mobile  : mobile,
+                flex    : flex,
+                flexLg  : fledLg,
+                flexGtLg: flexGxLg
+            };
         };
+
+        changeSideNav(true, 5, 15, 10, false);
 
         $scope.$watch(function ()
                       {
                           return $mdMedia('gt-md');
                       }, function (show)
                       {
-                          $scope.sidenav.open = show;
+                          changeSideNav(show, 5, 15, 10, false);
+                      });
+
+        $scope.$watch(function ()
+                      {
+                          return $mdMedia('xs');
+                      }, function (show)
+                      {
+                          if (show)
+                          {
+                              changeSideNav(false, 0, 0, 0, true);
+                          }
+                          else if ($scope.sidenav.mobile)
+                          {
+                              changeSideNav(false, 5, 5, 5, false);
+                          }
                       });
 
         $scope.menu = function ()
         {
             if ($scope.sidenav.open)
             {
-                $scope.sidenav.open = false;
-                $scope.sidenav.flex = 5;
-                $scope.sidenav.flexLg = 5;
-                $scope.sidenav.flexGtLg = 5;
+                changeSideNav(false, 5, 5, 5, false);
             }
             else
             {
-                $scope.sidenav.open = true;
-                $scope.sidenav.flex = 5;
-                $scope.sidenav.flexLg = 15;
-                $scope.sidenav.flexGtLg = 10;
+                changeSideNav(true, 5, 15, 10, false);
             }
         };
     });
