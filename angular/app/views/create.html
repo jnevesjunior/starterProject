@@ -4,29 +4,28 @@
             <div layout="row">
                 <md-input-container flex>
                     <label>Name</label>
-                    <input ng-model="user.name" aria-label="Name"
-                           ng-required=""/>
+                    <input ng-model="user.name" aria-label="Name" required/>
                 </md-input-container>
             </div>
             <div layout="row">
                 <md-input-container flex>
                     <label>Email</label>
                     <input ng-model="user.email" type="email"
-                           aria-label="Email"/>
+                           aria-label="Email" required/>
                 </md-input-container>
             </div>
             <div layout="row">
                 <md-input-container flex>
                     <label>Password</label>
                     <input ng-model="user.password" type="password"
-                           aria-label="Password"/>
+                           aria-label="Password" required/>
                 </md-input-container>
             </div>
             <div layout="row">
                 <md-input-container flex>
                     <label>Confirm Password</label>
                     <input ng-model="user.password2" type="password"
-                           aria-label="Confirm Password"/>
+                           aria-label="Confirm Password" required/>
                 </md-input-container>
             </div>
             <div layout="row">
@@ -39,8 +38,8 @@
                     Cancel
                 </md-button>
                 <md-button class="md-raised md-primary"
-                           md-theme="positive" aria-label="Login"
-                           aria-label="Create" flex>
+                           md-theme="positive" aria-label="Create"
+                           ng-click="submitUser(user)" flex>
                     <md-icon class="material-icons" aria-label="Check">
                         check
                     </md-icon>
