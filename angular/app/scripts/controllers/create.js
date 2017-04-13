@@ -8,7 +8,7 @@
  * Controller of the angularApp
  */
 angular.module('angularApp')
-    .controller('CreateCtrl', function ($scope, $mdToast)
+    .controller('CreateCtrl', function ($scope, $mdToast, simpleToast)
     {
         this.awesomeThings = [
             'HTML5 Boilerplate',
@@ -20,23 +20,13 @@ angular.module('angularApp')
         {
             if (user === undefined || Object.keys(user).length !== 4)
             {
-                const toast = $mdToast.simple()
-                    .textContent('All fields are required!')
-                    .position('top right');
-
-                $mdToast.show(toast);
+                simpleToast.show('All fields are required!');
                 return false;
             }
 
             if (user.password !== user.password2)
             {
-
-                const toast = $mdToast.simple()
-                    .textContent('Sorry, passwords must be equals.')
-                    .position('top right');
-
-                $mdToast.show(toast);
-
+                simpleToast.show('Sorry, passwords must be equals.');
             }
         }
     });
