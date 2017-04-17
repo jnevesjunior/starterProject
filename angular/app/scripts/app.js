@@ -72,6 +72,12 @@ angular
                         templateUrl : 'views/calendar.html',
                         controller  : 'CalendarCtrl',
                         controllerAs: 'calendar'
+                    })
+                    .state('panel.users', {
+                        url         : '/users',
+                        templateUrl : 'views/users.html',
+                        controller  : 'UsersCtrl',
+                        controllerAs: 'users'
                     });
                 $urlRouterProvider.otherwise('/');
                 $locationProvider.html5Mode(true);
@@ -104,4 +110,13 @@ angular
                     .primaryPalette('grey', {
                         'default': '50'
                     });
+                $mdThemingProvider.theme('waiting-card')
+                    .primaryPalette('orange')
+                    .backgroundPalette('orange').dark();
+                $mdThemingProvider.theme('approved-card')
+                    .primaryPalette('green')
+                    .backgroundPalette('green').dark();
+                $mdThemingProvider.theme('denied-card')
+                    .primaryPalette('red')
+                    .backgroundPalette('red').dark();
             });

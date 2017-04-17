@@ -9,6 +9,13 @@
   width: $login-size;
 }
 
+.card-icon {
+  $card-size: 80px;
+  font-size: $card-size;
+  height: $card-size;
+  width: $card-size;
+}
+
 .history-icon {
   $history-size: 90px;
   font-size: $history-size;
