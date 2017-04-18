@@ -21,7 +21,8 @@ angular
         'ngMaterial',
         'md.data.table',
         'angularFileUpload',
-        'materialCalendar'
+        'materialCalendar',
+        'chart.js'
     ])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider)
             {
@@ -78,6 +79,12 @@ angular
                         templateUrl : 'views/users.html',
                         controller  : 'UsersCtrl',
                         controllerAs: 'users'
+                    })
+                    .state('panel.dashboard', {
+                        url         : '/dashboard',
+                        templateUrl : 'views/dashboard.html',
+                        controller  : 'DashboardCtrl',
+                        controllerAs: 'dashboard'
                     });
                 $urlRouterProvider.otherwise('/');
                 $locationProvider.html5Mode(true);
@@ -119,4 +126,18 @@ angular
                 $mdThemingProvider.theme('denied-card')
                     .primaryPalette('red')
                     .backgroundPalette('red').dark();
+                $mdThemingProvider.theme('view-card')
+                    .primaryPalette('grey')
+                    .backgroundPalette('grey').dark();
+            })
+    .config(function (ChartJsProvider)
+            {
+                // ChartJsProvider.setOptions({
+                //                                chartColors: ['#673ab7'],
+                //                                responsive : true
+                //                            });
+                // Configure all line charts
+                ChartJsProvider.setOptions('line', {
+                    showLines: true
+                });
             });

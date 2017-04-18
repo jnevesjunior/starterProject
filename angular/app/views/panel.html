@@ -27,6 +27,17 @@
         </md-toolbar>
         <md-content layout="column">
             <md-list>
+                <md-list-item ui-sref="panel.dashboard" class="iten-list">
+                    <div class="md-avatar">
+                        <md-icon class="material-icons md-primary"
+                                 aria-label="Dashboard">
+                            dashboard
+                        </md-icon>
+                    </div>
+                    <div class="md-list-item-text" ng-show="sidenav.open">
+                        <p>Dashboard</p>
+                    </div>
+                </md-list-item>
                 <md-list-item ui-sref="panel.users" class="iten-list">
                     <div class="md-avatar">
                         <md-icon class="material-icons md-primary"
